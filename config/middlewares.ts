@@ -1,6 +1,11 @@
 import type { Core } from '@strapi/strapi';
 
-const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Middlewares => [
+const allowedOrigins = [
+  process.env.FRONTEND_URL ?? 'http://localhost:3000',
+  'http://localhost:3000',
+]
+
+const config: Core.Config.Middlewares = [
   'strapi::logger',
   'strapi::errors',
   {
@@ -20,7 +25,7 @@ const config = ({ env }: Core.Config.Shared.ConfigParams): Core.Config.Middlewar
   {
     name: 'strapi::cors',
     config: {
-      origin: [env('FRONTEND_URL', 'http://localhost:3000')],
+      origin: allowedOrigins,
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       keepHeaderOnError: true,

@@ -2,6 +2,8 @@ import type { Core } from '@strapi/strapi';
 
 const allowedOrigins = [
   process.env.FRONTEND_URL ?? 'http://localhost:3000',
+  'https://www.iberiainfo.org',
+  'https://iberiainfo.org',
   'http://localhost:3000',
 ]
 

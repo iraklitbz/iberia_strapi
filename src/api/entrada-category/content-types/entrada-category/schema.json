@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "entrada_categories",
+  "info": {
+    "singularName": "entrada-category",
+    "pluralName": "entrada-categories",
+    "displayName": "Entrada Category"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "entradas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::entrada.entrada",
+      "mappedBy": "category"
+    }
+  }
+}

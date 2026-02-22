@@ -35,6 +35,11 @@
       "relation": "manyToOne",
       "target": "api::entrada-category.entrada-category",
       "inversedBy": "entradas"
+    },
+    "acceso": {
+      "type": "enumeration",
+      "enum": ["publico", "miembros", "suscriptores"],
+      "default": "publico"
     }
   }
 }

@@ -35,6 +35,11 @@
       "relation": "manyToOne",
       "target": "api::georgian-category.georgian-category",
       "inversedBy": "georgians"
+    },
+    "acceso": {
+      "type": "enumeration",
+      "enum": ["publico", "miembros", "suscriptores"],
+      "default": "publico"
     }
   }
 }

@@ -39,9 +39,7 @@ const config: Core.Config.Middlewares = [
   {
     name: 'strapi::session',
     config: {
-      cookie: {
-        secure: false,
-      },
+      secure: false,
     },
   },
   'strapi::favicon',

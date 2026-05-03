@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bildex_categories",
+  "info": {
+    "singularName": "bildex-category",
+    "pluralName": "bildex-categories",
+    "displayName": "Bildex Category"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "bildexes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::bildex.bildex",
+      "mappedBy": "category"
+    }
+  }
+}

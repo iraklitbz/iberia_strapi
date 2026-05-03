@@ -1,2 +1,2 @@
 import { factories } from '@strapi/strapi';
-export default factories.createCoreRouter('api::bildex.bildex');
+export default factories.createCoreRouter('api::bildex.bildex' as any);

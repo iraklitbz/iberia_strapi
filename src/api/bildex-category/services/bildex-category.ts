@@ -1,2 +1,2 @@
 import { factories } from '@strapi/strapi';
-export default factories.createCoreService('api::bildex-category.bildex-category');
+export default factories.createCoreService('api::bildex-category.bildex-category' as any);

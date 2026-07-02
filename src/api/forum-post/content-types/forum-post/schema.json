@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_posts",
+  "info": {
+    "singularName": "forum-post",
+    "pluralName": "forum-posts",
+    "displayName": "Forum"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::forum-category.forum-category",
+      "inversedBy": "posts"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::forum-comment.forum-comment",
+      "mappedBy": "post"
+    },
+    "likes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::forum-like.forum-like",
+      "mappedBy": "post"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "authorKey": {
+      "type": "string"
+    },
+    "authorName": {
+      "type": "string"
+    },
+    "authorInitial": {
+      "type": "string"
+    },
+    "avatarClass": {
+      "type": "string"
+    },
+    "avatarUrl": {
+      "type": "string"
+    },
+    "legacyDocumentId": {
+      "type": "string",
+      "unique": true
+    },
+    "legacyCreatedAt": {
+      "type": "datetime"
+    },
+    "isPinned": {
+      "type": "boolean",
+      "default": false
+    },
+    "isLocked": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

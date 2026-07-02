@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_likes",
+  "info": {
+    "singularName": "forum-like",
+    "pluralName": "forum-likes",
+    "displayName": "Forum Like"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::forum-post.forum-post",
+      "inversedBy": "likes"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "userKey": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_categories",
+  "info": {
+    "singularName": "forum-category",
+    "pluralName": "forum-categories",
+    "displayName": "Forum Category"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "description": {
+      "type": "text"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "posts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::forum-post.forum-post",
+      "mappedBy": "category"
+    }
+  }
+}

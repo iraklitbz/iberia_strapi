@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_comments",
+  "info": {
+    "singularName": "forum-comment",
+    "pluralName": "forum-comments",
+    "displayName": "Forum Comment"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "message": {
+      "type": "text",
+      "required": true
+    },
+    "post": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::forum-post.forum-post",
+      "inversedBy": "comments"
+    },
+    "author": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "authorKey": {
+      "type": "string"
+    },
+    "authorName": {
+      "type": "string"
+    },
+    "authorInitial": {
+      "type": "string"
+    },
+    "avatarClass": {
+      "type": "string"
+    },
+    "avatarUrl": {
+      "type": "string"
+    },
+    "legacyCommentId": {
+      "type": "string"
+    },
+    "legacyCreatedAt": {
+      "type": "datetime"
+    }
+  }
+}

@@ -22,7 +22,8 @@
       "multiple": true,
       "allowedTypes": [
         "images",
-        "videos"
+        "videos",
+        "files"
       ]
     },
     "category": {
